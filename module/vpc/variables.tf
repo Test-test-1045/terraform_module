@@ -4,9 +4,9 @@ variable "region" {
 }
 variable "access_key" {
   type    = string
-  default = "AKIAZ32QFUO4ONWFVUVY"
+  default = "AKIAZ32QFUO4A7ONHUNZ"
 }
 variable "secret_key" {
   type    = string
-  default = "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"
+  default = "bgBfRT+M5PZ+qUt0ujZp4EMwWov/X+xr5X8My79D"
 }
