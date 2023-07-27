@@ -1,0 +1,13 @@
+name: gitleaks-scan
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [main]
+jobs:
+  secrets-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test
+      run: |
+        echo "test"
