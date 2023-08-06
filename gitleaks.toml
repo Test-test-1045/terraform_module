@@ -1,0 +1,28 @@
+title = "gitleaks config"
+
+[extend]
+# useDefault will extend the base configuration with the default gitleaks config:
+# https://github.com/zricethezav/gitleaks/blob/master/config/gitleaks.toml
+useDefault = true
+
+[[rules]]
+description = "password-detect"
+id = "password-detect-rule"
+regex = '''(?i)(?:secret|key|password|pwd|pass|token)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:{1,3}=|\|\|:|<=|=>|:|\?=)(?:'|\"|\s|=|\x60){0,5}([a-z0-9]{17})(?:['|\"|\n|\r|\s|\x60|;]|$)'''
+secretGroup = 1
+keywords = [
+    "pass","password",
+]
+
+[[rules]]
+description = "Hardcoded credentials in PHP files"
+id = "credentials-php"
+path = '''(.*?)\.php$'''
+regex = '''(?i)(?:secret|key|password|pwd|pass|token)(?:.{0,20})(?:=){1}(?:.{0,10})[\"\x27`](.{4,120})[\"\x27`]'''
+secretGroup = 1
+entropy = 3
+tags = [
+  "credentials",
+  "hardcoded",
+  "php",
+]
