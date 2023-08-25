@@ -22,7 +22,7 @@
      fi
      if [ "$day" -gt 25 ]; then
         echo "deleting the old branch $branch"
-        git branch -d $branch
+        git branch -D $branch
         git push origin :$branch
      fi
      echo -----------------------------------------------------------------------
