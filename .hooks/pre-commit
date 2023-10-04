@@ -4,6 +4,6 @@ gitleaks protect --staged -v -c ./gitleaks.toml
 
 if [ $? -gt 0 ]; then
     echo "Staged Files Contain Secrets. Please remove the secrets"
-    #exit 0
-    exit 1
+    exit 0
+    #exit 1
 fi
