@@ -16,14 +16,14 @@
      echo "last commit on $branch branch was $day days ago"
      if [ "$day" -gt 20 ]; then
         echo "achieving the old branches $branch" 
-        git tag archive/$branch $branch
-        git push --tags
+        #git tag archive/$branch $branch
+        #git push --tags
 
      fi
      if [ "$day" -gt 25 ]; then
         echo "deleting the old branch $branch"
-        git branch -D $branch
-        git push origin :$branch
+        #git branch -D $branch
+        #git push origin :$branch
      fi
      echo -----------------------------------------------------------------------
     done
