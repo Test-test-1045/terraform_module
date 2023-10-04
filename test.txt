@@ -4,3 +4,5 @@ testing after precommit
 testing:wq
 
 
+Access key ID = AKIAIOSFODNN7EXAMPLE
+git token = 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
